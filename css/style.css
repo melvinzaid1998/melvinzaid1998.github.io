@@ -6,12 +6,13 @@
     padding: 0; 
     box-sizing: border-box;
 }
+
 /* Base Styles */
 body {
     font-family: "Inter";
     background-color: #f5f5f5;
     color: rgb(0, 0, 0);
-    line-height:1.6;
+    line-height: 1.6;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -24,7 +25,7 @@ a {
 }
 
 ul {
-    list-style:none;
+    list-style: none;
 }
 
 .container {
@@ -34,7 +35,6 @@ ul {
 }
 
 /* HEADER NAVBAR */
-
 header {
     background: white;
     position: fixed;
@@ -44,15 +44,26 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     padding: 12px 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Space out the left and right elements */
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 
 nav ul {
     list-style: none; 
     display: flex; 
-    margin-left: 60px;
-    justify-content: left; 
+    justify-content: left;
     gap: 30px; 
+    margin: 0;
 }
 
 nav a {
@@ -65,7 +76,6 @@ nav a {
 
 @media (max-width:768px) {
     nav ul{
-       
         text-align: center;
     }
     header {
@@ -73,6 +83,28 @@ nav a {
     }
 }
 
+#theme-toggle {
+    background-color: rgb(22, 22, 22); /* Charcoal dark gray */
+    color: white;
+    border: 2px solid rgb(22, 22, 22); /* Same color as background */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: white;
+    color: #000000; /* Change the color on hover */
+    border-color: rgb(22, 22, 22);
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
 
 /* ABOUT SECTION */
 
@@ -197,3 +229,45 @@ nav a {
 .gmail-logo:hover {
     transform: scale(1.1);
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Very dark background */
+    color: white; /* White text for better contrast */
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e; /* Darker header */
+}
+
+body.dark-mode nav a {
+    color: #f5f5f5; /* Lighter text color for links */
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #444; /* Darker button background in dark mode */
+    color: white;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #ffffff; /* Button turns white when hovered */
+    color: black; /* Text turns black when hovered */
+   
+}
+
+body.dark-mode #about {
+    background: #121212; /* Dark background for dark mode */
+}
+
+body.dark-mode .about-container {
+    background-color: #121212; /* Darker background for the container */
+    color: white; /* White text for dark mode */
+ 
+}
+
+body.dark-mode #about h1,
+body.dark-mode #about h2,
+body.dark-mode #about p {
+    color: white; /* White text for headings and paragraphs in dark mode */
+}
+
